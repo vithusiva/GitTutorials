@@ -23,3 +23,466 @@ inside the resources create two directories css,js
 move your .css and .js files inside those directories
 
 push all of your changes to your remote Github account
+
+/*
+
+cscuser@L01-HP01 MINGW64 ~
+$ cd E:
+
+cscuser@L01-HP01 MINGW64 /e
+$ dir
+$RECYCLE.BIN  gitExamplelab01   GitTutorials                 Test1
+2016CSC030    gitExamplesLab01  System\ Volume\ Information  Test2
+
+cscuser@L01-HP01 MINGW64 /e
+$ cd GitTutorials/
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ dir
+gitCommands.txt  sh.exe.stackdump
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        sh.exe.stackdump
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+error: unable to read askpass response from 'C:/Program Files/Git/mingw64/libexec/git-core/git-gui--askpass'
+Username for 'https://github.com': vithusiva
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/vithusiva/GitTutorials.git/'
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git config --global user.name vithusiva
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git config --global user.email sivasomu11@gmail.com
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push
+Logon failed, use ctrl+c to cancel basic credential prompt.
+error: unable to read askpass response from 'C:/Program Files/Git/mingw64/libexec/git-core/git-gui--askpass'
+Username for 'https://github.com': vithusiva
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/vithusiva/GitTutorials.git/'
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 213.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vithusiva/GitTutorials.git
+ * [new branch]      master -> master
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+diff --git a/gitCommands.txt b/gitCommands.txt
+index e69de29..5700ba2 100644
+--- a/gitCommands.txt
++++ b/gitCommands.txt
+@@ -0,0 +1,11 @@
++Task 1
++
++Create a directory RapidApplication Development
++
++Go to the directory RapidApplication Development
++
++create another directory call Modue1
++
++Go to the directory Modue1
++
++create a file index.html
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git add gitCommands.txt
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+diff --git a/gitCommands.txt b/gitCommands.txt
+index 5700ba2..92f43b4 100644
+--- a/gitCommands.txt
++++ b/gitCommands.txt
+@@ -6,6 +6,6 @@ Go to the directory RapidApplication Development
+
+ create another directory call Modue1
+
+-Go to the directory Modue1
++
+
+ create a file index.html
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git add gitCommands.txt
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Added tasks:gitCommands.txt@
+>
+> "
+[master ee82bc8] Added tasks:gitCommands.txt@
+ 1 file changed, 11 insertions(+)
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Added tasks:gitCommands.txt"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vithusiva/GitTutorials.git
+   5b41c77..ee82bc8  master -> master
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git log
+commit ee82bc8e9d0329cda6ee373987015941a678ba0c (HEAD -> master, origin/master)
+Author: vithusiva <sivasomu11@gmail.com>
+Date:   Fri Jul 5 05:14:27 2019 +0530
+
+    Added tasks:gitCommands.txt@
+
+commit 5b41c77bbb836aa887ca4aaa32abd53c34e0c57d
+Author: = <=>
+Date:   Fri Jul 5 04:49:30 2019 +0530
+
+    Add a newFile gitCommands.txt
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+diff --git a/gitCommands.txt b/gitCommands.txt
+index 92f43b4..7b16268 100644
+--- a/gitCommands.txt
++++ b/gitCommands.txt
+@@ -6,6 +6,20 @@ Go to the directory RapidApplication Development
+
+ create another directory call Modue1
+
+-
++Go to the directory Modue1
+
+ create a file index.html
++
++Add this file to your Github account
++
++Modify the index.html as a welcome page of your Modue1
++
++If you have any .css or .js files for the design
++
++create a directory resources inside Module1
++
++inside the resources create two directories css,js
++
++move your .css and .js files inside those directories
++
++push all of your changes to your remote Github account
+\ No newline at end of file
+...skipping...
+@@ -6,6 +6,20 @@ Go to the directory RapidApplication Development
+
+ create another directory call Modue1
+
+-
++Go to the directory Modue1
+
+ create a file index.html
++
++Add this file to your Github account
++
++Modify the index.html as a welcome page of your Modue1
++
++If you have any .css or .js files for the design
++
++create a directory resources inside Module1
++
++inside the resources create two directories css,js
++
++move your .css and .js files inside those directories
++
++push all of your changes to your remote Github account
+\ No newline at end of file
+(END)
+@@ -6,6 +6,20 @@ Go to the directory RapidApplication Development
+
+ create another directory call Modue1
+diff --git a/gitCommands.txt b/gitCommands.txt
+index 92f43b4..7b16268 100644
+--- a/gitCommands.txt
++++ b/gitCommands.txt
+
+-
++Go to the directory Modue1
+
+ create a file index.html
++
++Add this file to your Github account
++
++Modify the index.html as a welcome page of your Modue1
++
++If you have any .css or .js files for the design
++
++create a directory resources inside Module1
++
++inside the resources create two directories css,js
++
++move your .css and .js files inside those directories
++
++push all of your changes to your remote Github account
+\ No newline at end of file
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+diff --git a/gitCommands.txt b/gitCommands.txt
+index 92f43b4..d9ab90d 100644
+--- a/gitCommands.txt
++++ b/gitCommands.txt
+@@ -4,8 +4,22 @@ Create a directory RapidApplication Development
+
+ Go to the directory RapidApplication Development
+
+-create another directory call Modue1
+-
++create another directory call Moduel
+
++Go to the directory Moduel
+
+ create a file index.html
++
++Add this file to your Github account
++
++Modify the index.html as a welcome page of your Modue1
++
++If you have any .css or .js files for the design
++
++create a directory resources inside Module1
++
++inside the resources create two directories css,js
++
++move your .css and .js files inside those directories
++
++push all of your changes to your remote Github account
+\ No newline at end of file
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git add RAD/
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   RAD/Moduel/index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   gitCommands.txt
+
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git add gitCommands.txt
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   RAD/Moduel/index.html
+        modified:   gitCommands.txt
+
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Add a new folder RAD"
+[master 33d7e70] Add a new folder RAD
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+ create mode 100644 RAD/Moduel/index.html
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 701 bytes | 350.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/vithusiva/GitTutorials.git
+   ee82bc8..33d7e70  master -> master
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git diff
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        RAD/Moduel/Resources/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Add a new folder RAD"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        RAD/Moduel/Resources/
+
+nothing added to commit but untracked files present
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Add a new folder Resources"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        RAD/Moduel/Resources/
+
+nothing added to commit but untracked files present
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ cd RAD
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials/RAD (master)
+$ cd Moduel/
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials/RAD/Moduel (master)
+$ git commit -m "Add a new folder Resources"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        Resources/
+
+nothing added to commit but untracked files present
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials/RAD/Moduel (master)
+$ cd ../../..
+
+cscuser@L01-HP01 MINGW64 /e
+$ cd Git
+gitExamplelab01/  gitExamplesLab01/ GitTutorials/
+
+cscuser@L01-HP01 MINGW64 /e
+$ cd GitTutorials/
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ dir
+gitCommands.txt  RAD
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        RAD/Moduel/Resources/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git add RAD/
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   RAD/Moduel/Resources/css/hello.css
+        new file:   RAD/Moduel/Resources/js/hello.js
+
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git commit -m "Add a new folder Resources"
+[master 4ed4a1d] Add a new folder Resources
+ 2 files changed, 2 insertions(+)
+ create mode 100644 RAD/Moduel/Resources/css/hello.css
+ create mode 100644 RAD/Moduel/Resources/js/hello.js
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$ git push
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 601 bytes | 200.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/vithusiva/GitTutorials.git
+   33d7e70..4ed4a1d  master -> master
+
+cscuser@L01-HP01 MINGW64 /e/GitTutorials (master)
+$
+
+*/
