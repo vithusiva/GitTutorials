@@ -4,8 +4,22 @@ Create a directory RapidApplication Development
 
 Go to the directory RapidApplication Development
 
-create another directory call Modue1
+create another directory call Moduel
 
-
+Go to the directory Moduel
 
 create a file index.html
+
+Add this file to your Github account
+
+Modify the index.html as a welcome page of your Modue1
+
+If you have any .css or .js files for the design
+
+create a directory resources inside Module1
+
+inside the resources create two directories css,js
+
+move your .css and .js files inside those directories
+
+push all of your changes to your remote Github account
